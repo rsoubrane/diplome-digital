@@ -1,0 +1,104 @@
+$header-height: 60px;
+
+.home-background {
+	.header {
+		min-height: $header-height;
+		background: none;
+		color: white;
+		font-size: 2rem;
+
+		h3 {
+			font-size: 16px;
+			@media only screen and (min-width: 576px) {
+				margin: 2rem auto;
+			}
+		}
+	}
+
+	.container-theme {
+		position: relative;
+		top: 5%;
+		left: 50%;
+		transform: translate(-50%, -5%);
+		height: 80%;
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+
+		@media only screen and (min-width: 576px) {
+			top: 25%;
+			left: 50%;
+			transform: translate(-50%, -25%);
+		}
+
+		.theme-rules {
+			max-width: 100%;
+			padding: 0.4rem;
+			border-radius: 30px;
+			background: linear-gradient(to bottom, #fefdff, #bc40e0);
+			@media only screen and (min-width: 576px) {
+				padding: 0.8rem;
+			}
+
+			.rules-text {
+				background: #222;
+				border-radius: 25px;
+				color: white;
+				padding: 0.8rem;
+				font-size: 13px;
+				@media only screen and (min-width: 576px) {
+					padding: 2rem;
+					font-size: 20px;
+				}
+			}
+		}
+
+		h2 {
+			margin: 0.8rem auto;
+			width: 100%;
+			font-size: 1rem;
+			text-align: center;
+
+			@media only screen and (min-width: 576px) {
+				font-size: 2rem;
+				margin: 2rem auto;
+			}
+		}
+
+		.theme-choice {
+			width: 100%;
+			margin: 0;
+
+			.container-button {
+				max-width: 100%;
+				padding: 0.3rem;
+				border-radius: 20px;
+				background: linear-gradient(to bottom, #fefdff, #bc40e0);
+				margin: 0.5rem auto;
+				@media only screen and (min-width: 576px) {
+					padding: 0.6rem;
+					margin: 1rem auto;
+				}
+
+				button {
+					width: 100%;
+					background: #222;
+					border-radius: 15px;
+					color: white;
+					padding: 0.5rem;
+					font-size: 14px;
+					&:active {
+						background: linear-gradient(to bottom, #fefdff, #bc40e0);
+						color: #222;
+					}
+
+					@media only screen and (min-width: 576px) {
+						font-size: 20px;
+						padding: 1rem;
+					}
+				}
+			}
+		}
+	}
+}

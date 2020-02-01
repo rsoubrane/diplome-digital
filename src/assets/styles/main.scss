@@ -1,0 +1,36 @@
+* {
+	touch-action: manipulation;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	overscroll-behavior-y: contain;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	user-select: none;
+	font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
+		segoe ui, arial, sans-serif;
+	position: fixed;
+	overflow: hidden;
+	// touch-action: none;
+}
+
+$primary-color: #ffb1ff;
+@import "loaders.css/src/animations/pacman.scss";
+
+.loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(2, 2);
+	text-align: center;
+}
+.loader-hidden {
+	display: none;
+}
+.loader-active {
+	display: block;
+}

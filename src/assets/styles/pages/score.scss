@@ -1,0 +1,119 @@
+$header-height: 60px;
+
+.home-background {
+	.header {
+		min-height: $header-height;
+		background: none;
+		color: white;
+		font-size: 2rem;
+
+		h3 {
+			font-size: 16px;
+			@media only screen and (min-width: 576px) {
+				font-size: 3rem !important;
+				margin: 2rem auto;
+			}
+		}
+	}
+
+	.content-score {
+		position: relative;
+		top: 5%;
+		left: 50%;
+		transform: translate(-50%, -5%);
+		height: 100%;
+		max-width: 80%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+
+		@media only screen and (min-width: 576px) {
+			top: 25%;
+			left: 50%;
+			transform: translate(-50%, -25%);
+		}
+
+		.button-prev {
+			max-width: 50%;
+			-webkit-transform: scaleX(-1);
+			transform: scaleX(-1);
+			@media only screen and (min-width: 576px) {
+				max-width: 100%;
+			}
+		}
+
+		.container-score {
+			max-width: 100%;
+			padding: 0.2rem;
+			border-radius: 10px;
+			background: linear-gradient(to bottom, #fefdff, #bc40e0);
+
+			@media only screen and (min-width: 576px) {
+				padding: 0.4rem;
+			}
+
+			.score {
+				background: #222;
+				border-radius: 8px;
+				color: white;
+				padding: 0.8rem;
+				@media only screen and (min-width: 576px) {
+					padding: 2rem;
+				}
+
+				h3 {
+					font-size: 20px;
+					margin: 1rem;
+
+					@media only screen and (min-width: 576px) {
+						font-size: 35px;
+						margin: 2rem;
+					}
+				}
+			}
+		}
+
+		h2 {
+			margin: 0.8rem auto;
+			width: 100%;
+			font-size: 1rem;
+			text-align: center;
+
+			@media only screen and (min-width: 576px) {
+				font-size: 2rem;
+				margin: 2rem auto;
+			}
+		}
+
+		.option-choice {
+			width: 100%;
+			margin: 0;
+
+			.container-button {
+				max-width: 100%;
+				padding: 0.2rem;
+				border-radius: 10px;
+				background: linear-gradient(to bottom, #fefdff, #bc40e0);
+				margin: 1rem auto;
+				@media only screen and (min-width: 576px) {
+					padding: 0.3rem;
+					margin: 2rem auto;
+				}
+
+				button {
+					width: 100%;
+					background: #222;
+					color: white;
+					border-radius: 8px;
+					padding: 0.4rem;
+					border-radius: 10px;
+					font-size: 14px;
+					@media only screen and (min-width: 576px) {
+						padding: 1rem;
+						font-size: 20px;
+					}
+				}
+			}
+		}
+	}
+}

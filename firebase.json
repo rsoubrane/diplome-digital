@@ -1,0 +1,25 @@
+{
+	"firestore": {
+		"rules": "firebase/firestore.rules",
+		"indexes": "firebase/firestore.indexes.json"
+	},
+	"hosting": {
+		"public": "build",
+		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+		"rewrites": [
+			{
+				"source": "**",
+				"destination": "/index.html"
+			},
+			{ "source": "/api/swiper", "function": "getSwiper" },
+			{ "source": "/api/majority", "function": "getMajority" },
+			{ "source": "/api/score/add", "function": "postScore" }
+		]
+	},
+	"storage": {
+		"rules": "firebase/storage.rules"
+	},
+	"functions": {
+		"source": "functions"
+	}
+}

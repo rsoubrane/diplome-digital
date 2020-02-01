@@ -1,0 +1,46 @@
+.container-timer {
+	position: relative;
+	height: auto;
+
+	canvas {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 0.5rem;
+	}
+
+	// @keyframes blink {
+	// 	0% {
+	// 		opacity: 0;
+	// 	}
+	// 	49% {
+	// 		opacity: 0;
+	// 	}
+	// 	50% {
+	// 		opacity: 1;
+	// 	}
+	// }
+
+	// /* Chrome, Safari, Opera */
+	// @-webkit-keyframes moveit {
+	// 	from {
+	// 		left: 0;
+	// 	}
+	// 	to {
+	// 		left: 50%;
+	// 	}
+	// }
+
+	/* Standard syntax */
+	@keyframes bigger {
+		from {
+			scale: 1;
+		}
+		to {
+			scale: 1.5;
+		}
+	}
+}
+
+

@@ -1,0 +1,50 @@
+.content-leaderboard {
+	height: 80%;
+	width: 80%;
+
+	.container-leaderboard {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: white;
+		padding: 0.8rem;
+		border-radius: 10px;
+		background: linear-gradient(to bottom, #fefdff, #bc40e0);
+
+		@media only screen and (min-width: 576px) {
+			padding: 1.5rem;
+		}
+
+		.leaderboard {
+			bottom: 0;
+			height: 100%;
+			background: #222;
+			border-radius: 8px;
+			padding: 0.8rem;
+			font-size: 13px;
+			overflow: scroll;
+
+			@media only screen and (min-width: 576px) {
+				font-size: 20px;
+			}
+
+			.table {
+				padding-bottom: 40px;
+				text-align: center;
+				color: white;
+				background: none;
+
+				th {
+					font-size: 3.5rem;
+				}
+
+				td {
+					font-size: 3rem;
+				}
+			}
+		}
+	}
+}

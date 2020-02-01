@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800");
+
+$header-height: 80px;
+$bg-left: rgba(72, 25, 88, 0.79);
+$bg-right: rgba(208, 107, 255, 0.5);
+$bg-up: rgba(196, 74, 149, 0.5);
+$bg-down: rgba(247, 229, 57, 0.5);
+$bg-correct: rgba(83, 136, 84, 0.8);
+$bg-error: rgba(124, 46, 46, 0.8);
+
+.container-game {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: white;
+
+	.game-background {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		background: url("../../images/home/bg.png") no-repeat center;
+		background-size: cover;
+
+		.loader-container {
+			position: relative;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+
+			.loader {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		.row {
+			margin: 0;
+		}
+
+		.header {
+			min-height: $header-height;
+			background: none;
+			color: white;
+			z-index: 1000;
+
+			h3 {
+				font-size: 20px;
+				@media only screen and (min-width: 576px) {
+					font-size: 2rem;
+					padding: 0.5rem auto;
+				}
+			}
+		}
+
+		.content {
+			position: absolute;
+			height: calc(100% - (#{$header-height}));
+			width: 100%;
+
+			img {
+				position: relative;
+				width: 4em;
+				opacity: 1;
+				z-index: 100;
+				@media only screen and (min-width: 576px) {
+					width: 8em;
+				}
+				.visible {
+					transition: opacity 0.7s ease-in;
+					opacity: 0;
+				}
+			}
+
+			.left-side {
+				background: $bg-left;
+			}
+			.right-side {
+				background: $bg-right;
+			}
+			.correct {
+				background: $bg-correct;
+			}
+			.error {
+				background: $bg-error;
+			}
+
+			.split-pane {
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+				height: 100%;
+				width: 50%;
+				font-size: 2em;
+				color: white;
+				font-weight: 300;
+
+				div {
+					position: absolute;
+					bottom: 10%;
+					left: 50%;
+					transform: translate(-50%, -10%) !important;
+					text-align: center;
+					z-index: 100;
+
+					img {
+						width: 3em;
+						background: none;
+
+						@media only screen and (min-width: 576px) {
+							width: 5em;
+						}
+					}
+				}
+			}
+
+			.card {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				border: none;
+				background: none;
+				z-index: 100;
+
+				div {
+					position: absolute;
+					height: 100%;
+					width: 100%;
+					top: 15%;
+					transform: translateY(-15%);
+					-webkit-transform: translateY(-15%);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					will-change: transform;
+
+					div {
+						background-color: white;
+						background-size: 90% auto;
+						background-repeat: no-repeat;
+						background-position: center center;
+						width: 35%;
+						height: 35%;
+						will-change: transform;
+						border-radius: 10px;
+						box-shadow: 0 5px 20px -1px rgba(50, 50, 73, 0.3), 0 1px 1px -1px rgba(50, 50, 73, 0.2);
+
+						@media only screen and (min-width: 576px) {
+							width: 30%;
+							height: 30%;
+						}
+					}
+				}
+			}
+			.wrapper {
+				width: 100%;
+				height: 100%;
+
+				div {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+
+					&.correct {
+						background: green;
+					}
+					&.error {
+						background: red;
+					}
+				}
+
+				div:nth-of-type(1) {
+					z-index: 1;
+					-webkit-clip-path: polygon(50% 50%, 0% 100%, 0% 0%);
+					clip-path: polygon(50% 50%, 0% 100%, 0% 0%);
+				}
+				div:nth-of-type(4) {
+					z-index: 2;
+					-webkit-clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
+					clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
+				}
+				div:nth-of-type(3) {
+					z-index: 3;
+					-webkit-clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+					clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+				}
+				div:nth-of-type(2) {
+					z-index: 4;
+					-webkit-clip-path: polygon(50% 50%, 100% 0%, 0% 0%);
+					clip-path: polygon(50% 50%, 100% 0%, 0% 0%);
+				}
+
+				.answer {
+					position: absolute;
+					width: 5em;
+					background: none;
+					z-index: 5;
+					@media only screen and (min-width: 576px) {
+						width: 10em;
+					}
+
+					&.left {
+						top: 50%;
+						left: 5%;
+						transform: translate(-5%, -50%);
+					}
+					&.right {
+						top: 50%;
+						right: 5%;
+						transform: translate(-5%, -50%);
+					}
+					&.up {
+						top: 5%;
+						left: 50%;
+						transform: translate(-50%, -5%);
+					}
+					&.down {
+						bottom: 5%;
+						left: 50%;
+						transform: translate(-50%, -5%);
+					}
+				}
+
+				.left-side {
+					background: $bg-left;
+				}
+				.right-side {
+					background: $bg-left;
+				}
+				.up-side {
+					background: $bg-right;
+				}
+				.down-side {
+					background: $bg-right;
+				}
+				.correct {
+					background: $bg-correct;
+				}
+				.error {
+					background: $bg-error;
+				}
+			}
+		}
+	}
+}
